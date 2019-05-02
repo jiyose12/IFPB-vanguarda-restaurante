@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Str;
-
 return [
 
     /*
@@ -15,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -46,9 +44,9 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'teste_vanguarda_restaurante'),
-            'username' => env('DB_USERNAME', 'root'),
-            'password' => env('DB_PASSWORD', 'Raimundo12'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -61,37 +59,13 @@ return [
             ]) : [],
         ],
 
-            // 'mysql' => [
-            //     'driver'      => 'mysql',
-            //     'host'        => env( 'DB_HOST', '127.0.0.1' ),
-            //     'port'        => env( 'DB_PORT', '3306' ),
-            //     'database'    => env( 'DB_DATABASE', 'teste_vanguarda_restaurante' ),
-            //     'username'    => env( 'DB_USERNAME', 'root' ),
-            //     'password'    => env( 'DB_PASSWORD', 'Raimundo12' ),
-            //     'unix_socket' => env( 'DB_SOCKET', '' ),
-            //     'charset'     => 'utf8mb4',
-            //     'collation'   => 'utf8mb4_unicode_ci',
-            //     'prefix'      => '',
-            //     'strict'      => true,
-            //     'engine'      => null,
-            //     'modes'       => [
-            //         'ONLY_FULL_GROUP_BY',
-            //         'STRICT_TRANS_TABLES',
-            //         'NO_ZERO_IN_DATE',
-            //         'NO_ZERO_DATE',
-            //         'ERROR_FOR_DIVISION_BY_ZERO',
-            //         'NO_ENGINE_SUBSTITUTION',
-            //     ],
-            // ],
-        
-
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'teste_vanguarda_restaurante'),
-            'username' => env('DB_USERNAME', 'postgres'),
-            'password' => env('DB_PASSWORD', 'Fernandes12'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
@@ -143,7 +117,6 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'predis'),
-            'prefix' => Str::slug(env('APP_NAME', 'laravel'), '_').'_database_',
         ],
 
         'default' => [

@@ -12,13 +12,5 @@
 */
 
 Route::get('/', function () {
-    return 'Primeira lógica com Laravel';
+    return view('welcome');
 });
-
-Route::get('/itens','ItensController@listarItens');
-
-Route::get('/itens/mostraritens/{id?}','ItensController@mostrarItens')->where('id', '[0-9]+');;
-
-Route::get('/itens/novositens','ItensController@novosItens');
-
-Route::post('/itens/adiciona', 'ItensController@adicionaItens');
