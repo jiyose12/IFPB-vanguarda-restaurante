@@ -29,12 +29,12 @@ class ItensController extends Controller {
         // retornar alguma view 
 
         $nome = Request::input('nome');
-        $descricao = Request::input('descricao');
-        $valor = Request::input('valor');
+        // $descricao = Request::input('descricao');
+        $preco_bruto = Request::input('preco_bruto');
         $quantidade = Request::input('quantidade');
 
-        DB::insert('insert into itens (nome, valor, descricao, quantidade) 
-    values (?, ?, ?, ?)', array($nome, $valor, $descricao, $quantidade));
+        DB::insert('insert into itens (nome, preco_bruto, quantidade) 
+    values (?, ?, ?, ?)', array($nome, $preco_bruto, $quantidade));
 
         return redirect('/itens')->withInput(Request::only('nome'));;
       }

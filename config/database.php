@@ -89,7 +89,7 @@ return [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'teste_vanguarda_restaurante'),
+            'database' => env('DB_DATABASE', 'vanguarda_restaurante'),
             'username' => env('DB_USERNAME', 'postgres'),
             'password' => env('DB_PASSWORD', 'Fernandes12'),
             'charset' => 'utf8',

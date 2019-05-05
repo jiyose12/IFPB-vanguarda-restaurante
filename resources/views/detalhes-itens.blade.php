@@ -6,10 +6,7 @@
 
 <ul>
   <li>
-    <b>Valor:</b> R$ {{$p->valor}} 
-  </li>
-  <li>
-    <b>Descrição:</b> {{$p->descricao}} 
+    <b>Valor:</b> R$ {{$p->preco_bruto}} 
   </li>
   <li>
     <b>Quantidade em estoque:</b> {{$p->quantidade}}
