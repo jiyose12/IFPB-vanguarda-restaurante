@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Cargo extends Migration
+class CreateContaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class Cargo extends Migration
      */
     public function up()
     {
-        Schema::create('cargo', function (Blueprint $table) {
-            $table->increments('id_cargo');
-            $table->string("nome");
+        Schema::create('conta', function (Blueprint $table) {
+            $table->bigIncrements('id_conta');
+            $table->double('preco_total',9,2);
+            $table->string('cpf',100);
+            $table->boolean('pago');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class Cargo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cargo');
+        Schema::dropIfExists('conta');
     }
 }

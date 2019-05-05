@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Funcionario extends Migration
+class CreatePedidoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,15 @@ class Funcionario extends Migration
     {
         Schema::create('pedido', function (Blueprint $table) {
             $table->bigIncrements('id_pedido');
-            $table->date('dataPedido');
+            $table->date('alterado');
+            $table->date('criado');
             $table->integer('mesa');
-            $table->integer('estado');
-            $table->unsignedInteger('id_funcionario');
-            $table->foreign('id_funcionario')->references('id_funcionario')->on('funcionario')->onDelete('cascade');
+            $table->integer('status');
+            $table->integer('valor');
+            $table->unsignedBigInteger('conta_id');
+            $table->foreign('conta_id')->references('id_conta')->on('conta')->onDelete('cascade')-> update('cascade');
+            $table->unsignedBigInteger('usuario_id');
+            $table->foreign('usuario_id')->references('id_usuario')->on('usuario')->onDelete('cascade')-> update('cascade'); 
             $table->timestamps();
         });
     }
