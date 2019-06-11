@@ -13,13 +13,17 @@
     <label>Nome</label>
     <input name="nome" class="form-control"/>
   </div>
+  <div class="form-group">
+    <label>Categoria</label>
+    <input name="categoria" class="form-control"/>
+  </div>
   <!-- <div class="form-group">
     <label>Descricao</label>
     <input name="descricao" class="form-control"/>
   </div> -->
   <div class="form-group">
     <label>Valor</label>
-    <input name="valor" class="form-control"/>
+    <input name="preco_bruto" class="form-control"/>
   </div>
   <div class="form-group">
     <label>Quantidade</label>

@@ -13,7 +13,7 @@
     @foreach ($itens as $p)
     <tr class="{{$p->quantidade<=1 ? 'text-danger' : '' }}">
       <td> {{$p->nome}} </td>
-      <td> {{$p->preco_bruto}} </td>
+      <td> R$ {{$p->preco_bruto}} </td>
       <td> {{$p->quantidade}} </td>
       <td> 
         <a href="/itens/mostraritens/{{$p->id}}">
