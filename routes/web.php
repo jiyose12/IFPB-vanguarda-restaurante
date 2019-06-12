@@ -22,3 +22,5 @@ Route::get('/itens/mostraritens/{id?}','ItensController@mostrarItens')->where('i
 Route::get('/itens/novositens','ItensController@novosItens');
 
 Route::post('/itens/adiciona', 'ItensController@adicionaItens');
+
+Route::delete('/itens/remove/{id}', 'ItensController@removeItens');

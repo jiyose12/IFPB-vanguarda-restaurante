@@ -2,6 +2,12 @@
 
 @section('conteudo')
 
+@if(!empty($mensagem))
+<div class="alert alert-success">
+    {{ $mensagem }}
+</div>
+@endif
+
  @if(empty($itens))
   <div class="alert alert-danger">
     Você não tem nenhum produto cadastrado.
@@ -20,6 +26,16 @@
           <span class="fa fa-search"></span>
         </a>
       </td>
+      <td>
+      <form method="post" action="/itens/remove/{{$p->id}}" 
+      onsubmit="return confirm('Tem certeza que deseja remover {{addslashes($p->nome)}}?')">
+      @csrf
+      @method('DELETE')
+      <button class="btn btn-danger">
+       <span class="fa fa-trash"></span>
+       </button>
+      </form>    
+      </td>
     </tr>
     @endforeach
   </table>
@@ -31,11 +47,11 @@
   </span>
  </h4>
 
- @if(old('nome'))
+ <!-- @if(old('nome'))
   <div class="alert alert-success">
     <strong>Sucesso!</strong> 
         O produto {{ old('nome') }} foi adicionado.
   </div>
-@endif
+@endif -->
 
 @stop
