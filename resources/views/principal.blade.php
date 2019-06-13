@@ -19,7 +19,7 @@
           Listagem de Itens</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{action('ItensController@novosItens')}}">
+        <a class="nav-link" href="{{ route('criar_itens') }}">
           Novo Itens</a>
       </li>
     
