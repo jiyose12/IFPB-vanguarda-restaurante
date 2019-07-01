@@ -17,6 +17,7 @@
 <table class="table table-striped table-bordered table-hover">
   @foreach ($itens as $p)
   <tr class="{{$p->quantidade<=1 ? 'text-danger' : '' }}">
+    <td><img style="width: 100px" src="/storage/img_itens/{{$p->img_itens}}" alt=""></td>
     <td> {{$p->nome}} </td>
     <td> R$ {{$p->preco_bruto}} </td>
     <td> {{$p->quantidade}} </td>

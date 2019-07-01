@@ -24,7 +24,8 @@ class ItensFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required'
+            'nome' => 'required',
+            'img_itens' => 'image|nullable|max:1999'
         ];
     }
     

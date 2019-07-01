@@ -13,7 +13,8 @@ class Itens extends Model
     'preco_bruto',
     'preco_liquido',
     'desconto',
-    'quantidade'
+    'quantidade',
+    'img_itens'
 ];
 
 public function pedidos()

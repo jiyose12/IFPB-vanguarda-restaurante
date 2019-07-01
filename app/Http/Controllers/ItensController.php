@@ -34,10 +34,6 @@ class ItensController extends Controller
 
     public function adicionaItens(ItensFormRequest $request)
     {
-        // pegar dados do formulario
-        // salvar no banco de dados
-        // retornar alguma view 
-
         // $nome = Request::input('nome');
         // $descricao = Request::input('descricao');
         // $preco_bruto = Request::input('preco_bruto');
@@ -46,11 +42,29 @@ class ItensController extends Controller
 
         //     DB::insert('insert into itens (nome, preco_bruto, quantidade) 
         // values (?, ?, ?, ?)', array($nome, $preco_bruto, $quantidade));
+
+        // Handle File Upload
+        if($request->hasFile('img_itens')){
+            // Get filename with the extension
+            $filenameWithExt = $request->file('img_itens')->getClientOriginalName();
+            // Get just filename
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            // Get just ext
+            $extension = $request->file('img_itens')->getClientOriginalExtension();
+            // Filename to store
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
+            // Upload Image
+            $path = $request->file('img_itens')->storeAs('public/img_itens', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'noimage.png';
+        }
+
         $itens = Itens::create([
             'preco_bruto' => $request->preco_bruto,
             'nome' => mb_strtolower($request->nome),
             'quantidade' => $request->quantidade,
-            'categoria' => mb_strtolower($request->categoria)
+            'categoria' => mb_strtolower($request->categoria),
+            'img_itens' => $fileNameToStore
         ]);
         $request->session()->flash(
             'mensagem',
