@@ -10,4 +10,31 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function homepage()
+    {
+        return view('welcome');
+    }
+
+    public function fazerPedido(){
+        
+        return view('user.pedido');
+    }
+
+    public function administrar(){
+        return view('user.adm');
+    }
+
+    /**
+     * VIEW DO LOGIN!!!
+     */
+
+    public function telaLogin(){
+        return view('user.login');
+       
+    }
+
+    public function telaCadastraFunc(){
+        return view('user.cadastraFunc');
+    }
 }

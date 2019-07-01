@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,6 +12,45 @@
 |
 */
 
+Route::get('/', ['uses' =>'Controller@homepage']);
+
+
+
+Route::get('/login', ['uses' =>'Controller@telaLogin']);
+
+
+Route::get('/cadastroFunc', 'Controller@telaCadastraFunc')
+    ->name('telaCadastraFunc');
+
+Route::get('/adm', 'Controller@administrar')
+    ->name('tela_Adm');
+
+Route::get('/pedido', 'Controller@fazerPedido')
+    ->name('tela_pedido');
+
+/**
+ * Raimundo Rotas
+ */
+
 Route::get('/', function () {
-    return view('welcome');
+    return 'Primeira lógica com Laravel';
 });
+
+Route::get('/itens', 'ItensController@listarItens')
+    ->name('listar_itens');
+
+Route::get('/itens/mostraritens/{id?}', 'ItensController@mostrarItens')->where('id', '[0-9]+');
+
+Route::get('/itens/novositens', 'ItensController@novosItens')
+    ->name('criar_itens');
+
+Route::post('/itens/adiciona', 'ItensController@adicionaItens');
+
+Route::delete('/itens/remove/{id}', 'ItensController@removeItens');
+
+Route::get('/menu', 'PedidosController@listarMenu')
+    ->name('menu');
+
+Route::get('/menu/findByName', 'PedidosController@findByName');
+
+
