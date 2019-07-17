@@ -23,7 +23,7 @@ class CreatePedidoTable extends Migration
             $table->unsignedBigInteger('conta_id');
             $table->foreign('conta_id')->references('id_conta')->on('conta')->onDelete('cascade')-> update('cascade');
             $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id_usuario')->on('usuario')->onDelete('cascade')-> update('cascade'); 
+            $table->foreign('usuario_id')->references('id')->on('usuario')->onDelete('cascade')-> update('cascade'); 
             $table->timestamps();
         });
     }

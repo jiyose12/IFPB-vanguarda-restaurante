@@ -15,11 +15,13 @@ class CreateUsuarioTable extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
            
-            $table->bigIncrements('id_usuario');
+            $table->bigIncrements('id');
+            
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id_role')->on('role')->onDelete('cascade')-> update('cascade');
-         
             $table->string('nome');
+            $table->string('name');
+            $table->string('email');
             $table->string('username');
             $table->string('password', 455);
             
