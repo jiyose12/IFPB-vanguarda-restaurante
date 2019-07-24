@@ -1,22 +1,24 @@
+
+
 @extends('principal')
 
 @section('conteudo')
 
-@if(!empty($mensagem))
-<div class="alert alert-success">
-  {{ $mensagem }}
-</div>
-@endif
+  <body>
+    @if(!empty($mensagem))
+ <div class="alert alert-success">
+   {{ $mensagem }}
+  </div>
+  @endif
 
-@if(empty($itens))
-<div class="alert alert-danger">
-  Você não tem nenhum produto cadastrado.
-</div>
-@else
-<h1>Listagem de itens</h1>
-<table id="exemplo"class="table table-striped table-bordered table-hover" style="width:100%">
-
-<thead>
+  @if(empty($itens))
+    <div class="alert alert-danger">
+        Você não tem nenhum produto cadastrado.
+  </div>
+    @else
+  <h1>Listagem de itens</h1>
+  <table id="exemplo "class="table table-striped table-bordered" style="width:100%">
+    <thead>
             <tr>
                 <th>Imagem</th>
                 <th>Nome</th>
@@ -26,13 +28,10 @@
                 <th>Deletar Produto</th> 
             </tr>
         </thead>
+<tbody>
 
-<!-- <div id="example_filter" class="dataTables_filter">
-  <label>Pesquisar: 
-  <input type="search" class="form-control input-sm" placeholder aria-controls="exemplo" style="width:100%">
-  </label>
-</div> -->
   @foreach ($itens as $p)
+
   <tr class="{{$p->quantidade<=1 ? 'text-danger' : '' }}">
     <td><img style="width: 100px" src="/storage/img_itens/{{$p->img_itens}}" alt=""></td>
     <td> {{$p->nome}} </td>
@@ -54,16 +53,18 @@
     </td>
   </tr>
   @endforeach
-</table>
+ 
 @endif
-
+</tbody>
+</table>
+<!--
 <h4>
-  <span class="alert alert-danger float-right">
+  <span class="alert alert-danger float-right" style="width:23%">
     Um ou menos itens no estoque
   </span>
 </h4>
 
-<!-- @if(old('nome'))
+ @if(old('nome'))
   <div class="alert alert-success">
     <strong>Sucesso!</strong> 
         O produto {{ old('nome') }} foi adicionado.
