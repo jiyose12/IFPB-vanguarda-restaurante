@@ -48,55 +48,46 @@
 </div>
 @else
 
-<section class="menu-table">
-<table class="table table-bordered table-hover">
-<thead class="thead-light">
-    <tr>
-      <th scope="col"> <b>Nome</b> </th>
-      <th scope="col"> <b>R$</b> </th>
-      <th scope="col"><b>Detalhes</b></th>
-      <th scope="col"><b>Adicionar</b></th>
-      <th scope="col"><b>Remover</b></th>
-    </tr>
-  </thead>
-  <tbody>
+<style>
+    .categoria button {
+        margin: 0 25px 0 25px;
+    }
+    .menu-table td{
+        text-align: center;
+    }
+
+    .row{
+      background: #fff;
+      padding: 1px;
+      text-align: center;
+      
+    }
+
+    .col-sm-12{
+      padding: 20px;
+      background-color: #FAFAFA;
+      width: 100%;      
+    }
+
+    .responsive {
+      width: 250px;
+      height: auto;
+    }
+
+</style>
+<div class="row">    
   @foreach ($itens as $p)
-  <tr>
-    <td> {{$p->nome}} </td>
-    <td> R$ {{$p->preco_bruto}} </td>
-    <td>
-      <a href="/itens/mostraritens/{{$p->id}}">
-        <span class="fa fa-2x fa-search"></span>
-      </a>
-    </td>
-    <td>
-      <form method="post" action="/itens/teste/{{$p->id}}" onsubmit="return confirm('Tem certeza que deseja remover {{addslashes($p->nome)}}?')">
-        
-        <button class="btn btn-primary">
-        <span class="fa-stack">
-    <i class="fa fa-shopping-cart fa-stack-2x"></i>
-    <i class="fa fa-plus fa-stack-1x text-success"></i>
-</span>
-          <!-- <span class="fa fa-cart-plus "></span> -->
-        </button>
-      </form>
-    </td>
-    <td>
-      <form method="post" action="/itens/teste/{{$p->id}}" onsubmit="return confirm('Tem certeza que deseja remover {{addslashes($p->nome)}}?')">
-        
-        <button class="btn btn-danger">
-        <span class="fa-stack">
-    <i class="fa fa-shopping-cart fa-stack-2x"></i>
-    <i class="fa fa-minus fa-stack-1x text-danger"></i>
-</span>
-          <!-- <span class="fa fa-cart-plus "></span> -->
-        </button>
-      </form>
-    </td>
-  </tr>
-  @endforeach
-</tbody>
-</table>
-</section>
+  <div class="col-sm-12 col-md-3">
+      <div class="thumbnail">       
+           <a href="/itens/mostraritens/{{$p->id}}"> <img class="responsive" src="/storage/img_itens/{{$p->img_itens}}" alt="Imagem"></a>
+            </div>
+            <p>{{$p->nome}}  R${{$p->preco_bruto}}</p>
+            <form method="post" action="/itens/teste/{{$p->id}}" onsubmit="return confirm('Tem certeza que deseja adicionar {{addslashes($p->nome)}}?')">
+            <button class="btn btn-primary">
+            <span class="fa-stack">
+            <i class="fa fa-shopping-cart fa-stack-2x"></i>
+      </div>
+   @endforeach
+  </div>
 @endif
 @stop

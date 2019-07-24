@@ -11,7 +11,8 @@ class Pedido extends Model
         'mesa',
         'status',
         'valor',
-        'pago'
+        'pago',
+        'dessessionid'
     ];
     
     public function itens()

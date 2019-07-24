@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return 'Primeira lógica com Laravel';
+    return view('welcome');
 });
 
 Route::get('/itens', 'ItensController@listarItens')
@@ -31,3 +31,11 @@ Route::get('/menu', 'PedidosController@listarMenu')
     ->name('menu');
 
 Route::get('/menu/findByName', 'PedidosController@findByName');
+
+Route::get('/cart', 'PedidosController@listarCart')
+    ->name('cart');
+
+Route::get('/teste', 'PedidosController@getFromSession');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
