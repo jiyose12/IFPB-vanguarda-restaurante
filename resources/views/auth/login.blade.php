@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<link href="{{ asset('css/styles.css') }}" rel="stylesheet"> 
+   
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-center h-100">
@@ -13,6 +15,7 @@
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        
                                     </div>
                                     <input id="email" type="email" placeholder="E-MAIL" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                     @error('email')

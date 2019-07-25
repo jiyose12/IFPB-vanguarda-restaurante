@@ -28,6 +28,9 @@ Route::get('/adm', 'Controller@administrar')
 Route::get('/pedido', 'Controller@fazerPedido')
     ->name('tela_pedido');
 
+Route::get('/inicio','Controller@paginicio')
+    ->name('tela_inicio');
+
 /**
  * Raimundo Rotas
  */

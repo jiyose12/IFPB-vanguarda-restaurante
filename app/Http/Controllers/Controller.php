@@ -37,4 +37,8 @@ class Controller extends BaseController
     public function telaCadastraFunc(){
         return view('user.cadastraFunc');
     }
+
+    public function paginicio(){
+        return view('user.inicio');
+    }
 }
