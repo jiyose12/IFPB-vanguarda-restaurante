@@ -20,10 +20,8 @@ class ItensController extends Controller
 
     public function mostrarItens(Request $request)
     {
-        // $id = OldRequest::route('id');
-        // $itens = DB::select('select * from itens where id = ?', [$id]);
         $item = Itens::find($request->id);
-        // return view('detalhes-itens')->with('p', $itens[0]);
+  
         return view('itens.detalhes-itens', compact('item'));
     }
 

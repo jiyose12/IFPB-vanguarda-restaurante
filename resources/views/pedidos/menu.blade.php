@@ -82,11 +82,14 @@
            <a href="/itens/mostraritens/{{$p->id}}"> <img class="responsive" src="/storage/img_itens/{{$p->img_itens}}" alt="Imagem"></a>
             </div>
             <p>{{$p->nome}}  R${{$p->preco_bruto}}</p>
-            <form method="post" action="/itens/teste/{{$p->id}}" onsubmit="return confirm('Tem certeza que deseja adicionar {{addslashes($p->nome)}}?')">
-            <button class="btn btn-primary">
-            <span class="fa-stack">
-            <i class="fa fa-shopping-cart fa-stack-2x"></i>
-      </div>
+                <form action="/cart/add/{{$p->id}}" method="get" onsubmit="return confirm('Tem certeza que deseja adicionar {{addslashes($p->nome)}}?')">
+                <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                    <button class="btn btn-primary">
+                        <span class="fa-stack">
+                        <i class="fa fa-shopping-cart fa-stack-2x"></i>
+                    </button>
+            </form>
+    </div>
    @endforeach
   </div>
 @endif

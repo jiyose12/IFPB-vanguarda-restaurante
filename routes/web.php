@@ -32,10 +32,18 @@ Route::get('/menu', 'PedidosController@listarMenu')
 
 Route::get('/menu/findByName', 'PedidosController@findByName');
 
-Route::get('/cart', 'PedidosController@listarCart')
+Route::get('/cart', 'ItensPedidosController@listCart')
     ->name('cart');
 
-Route::get('/teste', 'PedidosController@getFromSession');
+Route::get('/cart/add/{iditem}', 'ItensPedidosController@add')
+    ->name('addToCart');
+
+Route::post('/cart/{iditem}/removeOne', 'ItensPedidosController@removeOne')
+    ->name('removeOneFromCart');
+
+Route::post('/cart/{iditem}/removeAll', 'ItensPedidosController@removeAll')
+    ->name('removeAllFromCart');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

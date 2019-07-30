@@ -33,16 +33,14 @@ class PedidosController extends Controller {
         return $pedido;
     }
 
-    public function listarCart(Request $request){
-        $pedido = PedidosController::getFromSession($request);
-        var_dump($pedido);
-        // return view('pedidos.cart', compact('pedido'));
-    }
+    // public function listarCart(Request $request){
+    //     $pedido = PedidosController::getFromSession($request);
+    //     var_dump($pedido);
+    //     return view('pedidos.cart', compact('pedido'));
+    // }
 
     public function listarMenu(Request $request)
     {
-        $pedido = PedidosController::getFromSession($request);
-        var_dump($pedido);
         return view('pedidos.menu');
     }
     
