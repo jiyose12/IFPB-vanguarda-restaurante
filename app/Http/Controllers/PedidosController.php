@@ -6,12 +6,7 @@ use App\Itens;
 use App\Pedido;
 
 class PedidosController extends Controller {
-    // public static function getFromSession() {
-    //     $pedido = new Pedido();
-    //     if(isset($_SESSION[Pedido::SESSION]) && (int)$_SESSION[Pedido::SESSION]['id'] > 0){
-    //         $pedido->getId((int)$_SESSION[Pedido::SESSION]['id']);
-    //     }
-    // }
+
     public static function getFromSession(Request $request){
 
         $sessionid = $request->session()->getId();
@@ -24,13 +19,13 @@ class PedidosController extends Controller {
             $pedido = Pedido::where('dessessionid', $sessionid)->first();
   
             if($pedido == NULL){
-                $pedido = PedidosController::criarCart($request);
+                $pedido = PedidosController::createCart($request);
             }
         }
         return $pedido;
     }
     
-    public static function criarCart(Request $request){
+    public static function createCart(Request $request){
         $pedido = Pedido::create([
             'mesa' => $request->mesa,   
             'dessessionid' => $request->session()->getId()
@@ -46,6 +41,8 @@ class PedidosController extends Controller {
 
     public function listarMenu(Request $request)
     {
+        $pedido = PedidosController::getFromSession($request);
+        var_dump($pedido);
         return view('pedidos.menu');
     }
     

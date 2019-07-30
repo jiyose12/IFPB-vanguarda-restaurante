@@ -3,7 +3,6 @@
 @extends('principal')
 
 @section('conteudo')
-
   <body>
     @if(!empty($mensagem))
  <div class="alert alert-success">
@@ -15,10 +14,11 @@
     <div class="alert alert-danger">
         Você não tem nenhum produto cadastrado.
   </div>
-    @else
-  <h1>Listagem de itens</h1>
-  <table id="exemplo "class="table table-striped table-bordered" style="width:100%">
-    <thead>
+@else
+<h1>Listagem de itens</h1>
+<table id="exemplo"class="table table-striped table-bordered table-hover" style="width:100%">
+
+<thead>
             <tr>
                 <th>Imagem</th>
                 <th>Nome</th>
@@ -28,8 +28,12 @@
                 <th>Deletar Produto</th> 
             </tr>
         </thead>
-<tbody>
 
+<!-- <div id="example_filter" class="dataTables_filter">
+  <label>Pesquisar: 
+  <input type="search" class="form-control input-sm" placeholder aria-controls="exemplo" style="width:100%">
+  </label>
+</div> -->
   @foreach ($itens as $p)
 
   <tr class="{{$p->quantidade<=1 ? 'text-danger' : '' }}">
