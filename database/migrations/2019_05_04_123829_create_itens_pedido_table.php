@@ -18,8 +18,8 @@ class CreateItensPedidoTable extends Migration
             // $table->timestamps();
             $table->integer('itens_id')->unsigned();
             $table->integer('pedido_id')->unsigned();
-            $table->foreign('itens_id')->references('id')->on('itens');
-            $table->foreign('pedido_id')->references('id')->on('pedidos');
+            //$table->foreign('itens_id')->references('id')->on('itens');
+            //$table->foreign('pedido_id')->references('id')->on('pedidos');
         });
     }
 
