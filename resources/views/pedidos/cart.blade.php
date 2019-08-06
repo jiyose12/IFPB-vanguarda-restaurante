@@ -1,6 +1,11 @@
 @extends('principal')
 
 @section('conteudo')
+@if(!empty($mensagem))
+ <div class="alert alert-success">
+   {{ $mensagem }}
+  </div>
+  @endif
 <section>
 <div class="product-big-title-area">
     <div class="container">
@@ -46,7 +51,7 @@
 
                                     <tr class="cart_item">
                                         <td class="product-remove">
-                                            <a title="Remove this item" class="remove" href="#">×</a> 
+                                            <a title="Remover este item" class="remove" href="/cart/removeAll/{{$c->id}}">×</a> 
                                         </td>
 
                                         <td class="product-thumbnail">
@@ -63,9 +68,9 @@
 
                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
-                                                <input type="button" class="minus" value="-" onclick="window.location.href = '#'">
+                                                <input type="button" class="minus" value="-" onclick="window.location.href = '/cart/removeOne/{{$c->id}}'">
                                                 <input type="number" size="4" class="input-text qty text" title="Qty" value="{{$c->nrqtd}}" min="0" step="1">
-                                                <input type="button" class="plus" value="+" onclick="window.location.href = '#'">
+                                                <input type="button" class="plus" value="+" onclick="window.location.href = '/cart/add/{{$c->id}}'">
                                             </div>
                                         </td>
 

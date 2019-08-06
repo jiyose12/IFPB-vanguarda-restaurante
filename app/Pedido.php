@@ -17,7 +17,7 @@ class Pedido extends Model
     
     public function itens()
     {
-        return $this->belongsToMany(Itens::class);
+        return $this->belongsToMany('App\Itens', 'itens_pedidos');
     }
     
 }

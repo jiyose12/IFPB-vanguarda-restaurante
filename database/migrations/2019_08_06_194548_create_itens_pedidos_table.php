@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItensPedidoTable extends Migration
+class CreateItensPedidosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateItensPedidoTable extends Migration
      */
     public function up()
     {
-        Schema::create('itens_pedido', function (Blueprint $table) {
-            // $table->bigIncrements('id');
+        Schema::create('itens_pedidos', function (Blueprint $table) {
+            $table->bigIncrements('id');
             // $table->timestamps();
             $table->integer('itens_id')->unsigned();
             $table->integer('pedido_id')->unsigned();
             $table->foreign('itens_id')->references('id')->on('itens');
             $table->foreign('pedido_id')->references('id')->on('pedidos');
+            $table->date('dtremoved')->nullable();
         });
     }
 
@@ -30,6 +31,6 @@ class CreateItensPedidoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('itens_pedido');
+        Schema::dropIfExists('itens_pedidos');
     }
 }

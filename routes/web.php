@@ -38,10 +38,10 @@ Route::get('/cart', 'ItensPedidosController@listCart')
 Route::get('/cart/add/{iditem}', 'ItensPedidosController@add')
     ->name('addToCart');
 
-Route::post('/cart/{iditem}/removeOne', 'ItensPedidosController@removeOne')
+Route::get('/cart/removeOne/{iditem}', 'ItensPedidosController@removeOne')
     ->name('removeOneFromCart');
 
-Route::post('/cart/{iditem}/removeAll', 'ItensPedidosController@removeAll')
+Route::get('/cart/removeAll/{iditem}', 'ItensPedidosController@removeAll')
     ->name('removeAllFromCart');
 
 Auth::routes();
