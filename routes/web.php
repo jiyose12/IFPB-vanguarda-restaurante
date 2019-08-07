@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,11 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/itens', 'ItensController@listarItens')
     ->name('listar_itens');
 
@@ -43,7 +40,10 @@ Route::get('/cart/removeOne/{iditem}', 'ItensPedidosController@removeOne')
 
 Route::get('/cart/removeAll/{iditem}', 'ItensPedidosController@removeAll')
     ->name('removeAllFromCart');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cadastrofuncionario', function () {
+    return view('cadastrofunci');
+});
