@@ -23,13 +23,13 @@
     <div class="zigzag-bottom"></div>
     <div class="container">
         <div class="row">
-            
+
             <div class="col-md-12">
                 <div class="product-content-right">
                     <div class="woocommerce">
 
                         <form action="/checkout">
-                            
+
                             <!-- <div class="alert alert-danger" role="alert">
                             Error!
                             </div> -->
@@ -51,7 +51,9 @@
 
                                     <tr class="cart_item">
                                         <td class="product-remove">
-                                            <a title="Remover este item" class="remove" href="/cart/removeAll/{{$c->id}}">×</a> 
+                                            <a title="Remover este item" class="remove" href="/cart/removeAll/{{$c->id}}">
+                                                <i class="fas fa-times-circle" style="font-size: 30px;"></i>
+                                            </a>
                                         </td>
 
                                         <td class="product-thumbnail">
@@ -59,11 +61,11 @@
                                         </td>
 
                                         <td class="product-name">
-                                            <a href="#">{{$c->nome}}</a> 
+                                            <a href="#">{{$c->nome}}</a>
                                         </td>
 
                                         <td class="product-price">
-                                            <span class="amount">{{$c->preco_bruto}}</span> 
+                                            <span class="amount">{{$c->preco_bruto}}</span>
                                         </td>
 
                                         <td class="product-quantity">
@@ -75,33 +77,33 @@
                                         </td>
 
                                         <td class="product-subtotal">
-                                            <span class="amount">R$ {{$c->vltotal}}</span> 
+                                            <span class="amount">R$ {{$c->vltotal}}</span>
                                         </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
                             </table>
 
-                            <div class="cart-collaterals">
-
+                            <div class="cart-collaterals d-flex justify-content-around">
+<!--
                                 <div class="cross-sells">
 
                                     <h2>Cálculo de Frete</h2>
-                                    
+
                                     <div class="coupon">
                                         <label for="cep">CEP:</label>
                                         <input type="text" placeholder="00000-000" value="" id="cep" class="input-text" name="zipcode">
                                         <input type="submit" formmethod="post" formaction="/cart/freight" value="CÁLCULAR" class="button">
                                     </div>
 
-                                </div>
+                                </div> -->
 
-                                <div class="cart_totals ">
+                                <div class="">
 
                                     <h2>Resumo da Compra</h2>
 
                                     <table cellspacing="0">
-                                        <tbody>
+                                        <!-- <tbody>
                                             <tr class="cart-subtotal">
                                                 <th>Subtotal</th>
                                                 <td><span class="amount">$700.00</span></td>
@@ -110,26 +112,32 @@
                                             <tr class="shipping">
                                                 <th>Frete</th>
                                                 <td>$5.00 <small>prazo de 0 dia(s)</small></td>
-                                            </tr>
+                                            </tr> -->
 
                                             <tr class="order-total">
                                                 <th>Total</th>
-                                                <td><strong><span class="amount">$705.00</span></strong> </td>
+                                                <td><strong><span class="amount">R$ {{$total[0]->vlsoma}}</span></strong> </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-
+                                <div>
+                                    <div class="mb-4">
+                                        <a href="/menu">
+                                            <input type="button" class="btn btn-outline-secondary" value="Continue Comprando" name="proceed" class="checkout-button button alt wc-forward">
+                                        </a>
+                                    </div>
+                                    <div class="">
+                                        <input type="submit" value="Finalizar Compra" name="proceed" class="checkout-button button alt wc-forward">
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="pull-right">
-                                <input type="submit" value="Finalizar Compra" name="proceed" class="checkout-button button alt wc-forward">
-                            </div>
 
                         </form>
 
-                    </div>                        
-                </div>                    
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -5,22 +5,22 @@
 <div class="container">
 
     <div class="row justify-content-center">
-        
+
         <div class="col-md-12">
-            
-                
+
+
                     @if(auth()->user()->is_admin == 1)
                     <link rel="stylesheet" type="text/css" href="{{asset('css/styles1.css')}}">
-                    
-                   
+
+
                     <div class="container">
-                   
+
 
                             <div class="row">
                                 <div class="col-2"></div>
 
                             <div class="col-sm">
-                                <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                                <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
                                 <div class="card-header">
                                     <div class="row">
                                     <div class="col-xs-3">
@@ -74,7 +74,7 @@
                                 </div>
                                 </div>
 
-                            <!-- 
+                            <!--
 
                             <div class="col-sm">
                                 <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
@@ -123,7 +123,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div class="huge "></div>
-                                        <div class="ng-binding">Tela de Pesquisa</div>
+                                        <div class="ng-binding">Pesquisar no Estoque</div>
                                     </div>
                                     </div>
 
@@ -144,7 +144,7 @@
 
 
 
-
+<!--
                             <div class="col-sm">
                                 <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
                                 <div class="card-header">
@@ -171,6 +171,34 @@
                                 </div>
                                 </div>
 
+                            </div> -->
+
+                            <div class="col-sm">
+                                <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                                <div class="card-header">
+                                    <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-utensils fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge "></div>
+                                        <div class="ng-binding"> Menu do Restaurante</div>
+                                    </div>
+                                    </div>
+
+
+                                </div>
+                                <div class="card-body">
+                                    <a href="/menu">
+                                    <span>Menu</span>
+                                    <span>
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </span>
+                                    <div class="clearfix"></div>
+                                    </a>
+                                </div>
+                                </div>
+
                             </div>
                             <div class="col-2"></div>
                             </div>
@@ -179,7 +207,7 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
 
-                                                     
+
                                         {{ __('sair') }}
                                     </a>
 
@@ -196,32 +224,32 @@
                     @else
 
                     <div class="row">
-                    
+
                     <div class="col-md-3"></div>
-                    
-                   
-                       
+
+
+
                         <div class="col-md-6" align="center">
                             <h1>Escolha uma mesa</h1>
 
                             <form action="/menu" class="styles">
                                 <div class="form-group">
-                                
+
                                 <input type="text" class="form-control"  style="width:250px;font-size: 13px"  id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mesa" >
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
-                            </form> 
+                            </form>
                         </div>
                         <div class="col-md-3"></div>
                     </div>
-                        
-                      
-                
-                
-                    
+
+
+
+
+
                     @endif
-                
-            
+
+
         </div>
     </div>
 </div>

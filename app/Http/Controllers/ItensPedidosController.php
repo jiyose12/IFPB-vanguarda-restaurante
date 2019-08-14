@@ -102,6 +102,20 @@ class ItensPedidosController extends Controller
             ->orderBy('itens.nome')
             ->get();
 
-        return view('pedidos.cart', compact('pedido', 'mensagem', 'cart'));
+        $total = ItensPedidosController::getProductsTotal($pedido);
+
+        return view('pedidos.cart', compact('pedido', 'mensagem', 'cart', 'total'));
+    }
+
+    public static function getProductsTotal($pedido)
+    {
+        $total = DB::table('itens_pedidos')
+        ->join('itens', 'itens_pedidos.itens_id', '=', 'itens.id')
+        ->where('itens_pedidos.pedido_id', $pedido->id)
+        ->whereNull('itens_pedidos.dtremoved')
+        ->select(
+            DB::raw('SUM(itens.preco_bruto) as vlsoma')
+        )->get();
+        return $total;
     }
 }

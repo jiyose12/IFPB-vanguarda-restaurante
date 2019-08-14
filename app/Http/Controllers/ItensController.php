@@ -21,7 +21,7 @@ class ItensController extends Controller
     public function mostrarItens(Request $request)
     {
         $item = Itens::find($request->id);
-  
+
         return view('itens.detalhes-itens', compact('item'));
     }
 
@@ -38,7 +38,7 @@ class ItensController extends Controller
         // $quantidade = Request::input('quantidade');
         // $categoria = Request::input('categoria');
 
-        //     DB::insert('insert into itens (nome, preco_bruto, quantidade) 
+        //     DB::insert('insert into itens (nome, preco_bruto, quantidade)
         // values (?, ?, ?, ?)', array($nome, $preco_bruto, $quantidade));
 
         // Handle File Upload

@@ -45,6 +45,7 @@
 							<li><a href="{{ url('/auth/register') }}">Register</a></li>
 						@endif
 					@else
+					<a href="{{ route('home') }}" style="float: left;position: absolute; margin-left: -200px;margin-top: 9px;color: black;text-decoration: none;">Home</a>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">

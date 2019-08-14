@@ -16,50 +16,50 @@
 
         <!-- Styles -->
         <style>
-            
-            
-           
 
-           
-            
-           
+
+
+
+
+
+
         </style>
     </head>
     @extends('layouts.app')
     <body>
-   
-            
-            
+
+
+
        <div class="container-fluid">
-       
+
             <video id="vd" src="{{asset('video/videorest.mp4')}}" autoplay="true" loop="true"></video>
 
-            
+
        </div>
 
 
        <div class="container"  style="position: absolute;
        margin-top: 129px;">
-            
-                    
+
+
                     <div class="col-8">
                             <div class="absolute">
                                 <a href="http://" id="logo"> Restaurante </a>
                                 <a href="http://"id="bem-vindo">Bem Vindo</a>
-                             
-                             
+
+
                             </div>
-                             
+
                             <div id="fundo-titulo"></div>
-                        
+
                     </div>
-                    
-                
+
+
        </div>
 
-       
-      
-        
-      
+
+
+
+
     </body>
 </html>
