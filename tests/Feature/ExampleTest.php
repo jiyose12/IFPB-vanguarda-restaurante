@@ -18,4 +18,27 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+
+
+    public function lista (){
+        $response=$this->json('GET','/api/itens');
+        $response->assertStatus(200);
+        $response->assertJsonStructure(
+            [
+                'nome',
+                'categoria',
+                'preco_bruto',
+                'preco_liquido',
+                'desconto',
+                'quantidade',
+                'img_itens',
+
+            ]
+            );
+
+
+    }
+
+
 }
