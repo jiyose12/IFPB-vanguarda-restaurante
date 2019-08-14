@@ -1,0 +1,39 @@
+
+
+
+#vd{
+    position: fixed;
+    top: 52%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    
+    
+    
+}
+.absolute{
+    margin-top: 92px;
+}
+#logo{
+    font-size: 142px;
+    margin-left: -19px;
+    font-family: 'Tangerine', cursive;
+    color: darkorange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#bem-vindo{
+    font-size: 25px;
+    color: darkorange;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+

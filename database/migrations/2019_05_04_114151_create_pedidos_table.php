@@ -20,6 +20,7 @@ class CreatePedidosTable extends Migration
             $table->integer('status')->default(0);
             $table->integer('pago')->default(0);
             $table->float('valor')->nullable();
+            $table ->string('dessessionid')->nullable();
         });
     }
 

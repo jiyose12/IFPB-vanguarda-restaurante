@@ -22,6 +22,7 @@ class CreateItensTable extends Migration
             $table->float('preco_liquido')->nullable();
             $table->integer('desconto')->nullable();
             $table->integer('quantidade');
+            $table ->string('img_itens')->nullable();
         });
     }
 

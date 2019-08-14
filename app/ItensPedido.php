@@ -13,3 +13,4 @@ class ItensPedido extends Model
         'dtremoved'
     ];
 }
+
